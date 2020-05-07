@@ -58,6 +58,14 @@ You need to include the following Info.plist key in order to request camera acce
 ### android
 do nothing
 
+
+
+## TODO
+
+- [ ] ios to be Implement
+
+
+
 ## Warning
 
 On android and in debug mode, the camera preview will stuck sometimes,  but it did not happen in release mode.
