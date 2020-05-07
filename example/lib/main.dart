@@ -13,8 +13,6 @@ class MyApp extends StatefulWidget {
 }
 
 class _MyAppState extends State<MyApp> {
-  String _result = '';
-
   @override
   void initState() {
     super.initState();
@@ -30,7 +28,7 @@ class _MyAppState extends State<MyApp> {
     return MaterialApp(
       home: Scaffold(
         appBar: AppBar(
-          title: const Text('Plugin example app'),
+          title: const Text('Scan barcode example'),
         ),
         body: Container(
           child: ScanPreviewWidget(

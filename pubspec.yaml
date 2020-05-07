@@ -1,8 +1,7 @@
 name: scan_preview
-description: A new flutter plugin project.
+description: A flutter plugin for scan barcode.
 version: 0.0.1
-author:
-homepage:
+homepage: https://github.com/chinachen01/flutter_scan_preview
 
 environment:
   sdk: ">=2.1.0 <3.0.0"
