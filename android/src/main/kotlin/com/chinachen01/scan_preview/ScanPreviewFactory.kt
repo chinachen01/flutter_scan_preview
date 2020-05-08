@@ -14,7 +14,7 @@ import io.flutter.plugin.platform.PlatformViewFactory
  * 内容描述区域
  *
  */
-class SharePlatformViewFactory(val messenger: BinaryMessenger) : PlatformViewFactory(StandardMessageCodec.INSTANCE) {
+class ScanPreviewFactory(val messenger: BinaryMessenger) : PlatformViewFactory(StandardMessageCodec.INSTANCE) {
     override fun create(context: Context?, id: Int, args: Any?): PlatformView {
         context ?: throw Exception("context be null")
         return ScanPreviewBuilder().build(context, id, messenger, args)

@@ -1,19 +1,13 @@
 package com.chinachen01.scan_preview
 
-import android.util.Log
 import androidx.annotation.NonNull;
 import io.flutter.embedding.engine.plugins.FlutterPlugin
-import io.flutter.plugin.common.MethodCall
-import io.flutter.plugin.common.MethodChannel
-import io.flutter.plugin.common.MethodChannel.MethodCallHandler
-import io.flutter.plugin.common.MethodChannel.Result
 import io.flutter.plugin.common.PluginRegistry.Registrar
-import java.sql.DriverManager.println
 
 /** ScanPreviewPlugin */
 public class ScanPreviewPlugin : FlutterPlugin {
     override fun onAttachedToEngine(@NonNull flutterPluginBinding: FlutterPlugin.FlutterPluginBinding) {
-        flutterPluginBinding.platformViewRegistry.registerViewFactory(VIEW_TYPE, SharePlatformViewFactory(flutterPluginBinding.binaryMessenger))
+        flutterPluginBinding.platformViewRegistry.registerViewFactory(VIEW_TYPE, ScanPreviewFactory(flutterPluginBinding.binaryMessenger))
     }
 
     // This static function is optional and equivalent to onAttachedToEngine. It supports the old
@@ -29,7 +23,7 @@ public class ScanPreviewPlugin : FlutterPlugin {
         const val VIEW_TYPE = "scan_preview"
         @JvmStatic
         fun registerWith(registrar: Registrar) {
-            registrar.platformViewRegistry().registerViewFactory(VIEW_TYPE, SharePlatformViewFactory(registrar.messenger()))
+            registrar.platformViewRegistry().registerViewFactory(VIEW_TYPE, ScanPreviewFactory(registrar.messenger()))
         }
     }
 
