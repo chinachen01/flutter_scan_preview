@@ -6,11 +6,9 @@
   <component name="ChangeListManager">
     <list default="true" id="e48ad1ca-54eb-440b-9d6d-b52bc71140fe" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/example/ios/Runner/Info.plist" beforeDir="false" afterPath="$PROJECT_DIR$/example/ios/Runner/Info.plist" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ios/Classes/File.swift" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/ios/Classes/ScanPreview.swift" beforeDir="false" afterPath="$PROJECT_DIR$/ios/Classes/ScanPreview.swift" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ios/Classes/ScanPreviewFactory.swift" beforeDir="false" afterPath="$PROJECT_DIR$/ios/Classes/ScanPreviewFactory.swift" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ios/Classes/SwiftScanPreviewPlugin.swift" beforeDir="false" afterPath="$PROJECT_DIR$/ios/Classes/SwiftScanPreviewPlugin.swift" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/scan_preview.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/scan_preview.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/scan_preview_widget.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/scan_preview_widget.dart" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
