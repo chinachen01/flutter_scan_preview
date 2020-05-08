@@ -74,6 +74,9 @@ class ScanPreviewWidgetState extends State<ScanPreviewWidget>
     } else {
       return UiKitView(
         viewType: 'scan_preview',
+        creationParams: creationParams,
+        creationParamsCodec: const StandardMessageCodec(),
+        onPlatformViewCreated: onPlatformViewCreated,
       );
     }
   }
