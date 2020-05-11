@@ -62,7 +62,7 @@ do nothing
 
 ## TODO
 
-- [ ] ios to be Implement
+- [ ] ios to be tested
 
 
 
