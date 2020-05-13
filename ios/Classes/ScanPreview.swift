@@ -14,6 +14,7 @@ class ScanPreview : NSObject,FlutterPlatformView {
         let tmpScanner = scanner
         methodChannel = FlutterMethodChannel.init(name: "scan_preview_\(viewId)", binaryMessenger: registrar.messenger())
         messageChannel = FlutterBasicMessageChannel.init(name: "scan_preview_message", binaryMessenger: registrar.messenger())
+        let tmpMessageChannel = messageChannel
         methodChannel.setMethodCallHandler({
           (call: FlutterMethodCall, result: FlutterResult) -> Void in
              if(call.method == "scan#startCamera") {
@@ -21,7 +22,7 @@ class ScanPreview : NSObject,FlutterPlatformView {
                     try tmpScanner.startScanning(resultBlock: { codes in
                         if let codes = codes {
                             for code in codes {
-                                messageChannel.sendMessage(code.stringValue!)
+                                tmpMessageChannel.sendMessage(code.stringValue!)
                             }
                         }
                     })
