@@ -1,10 +1,9 @@
 import 'package:flutter/services.dart';
 
 class ScanPreview {
-  static const MethodChannel _channel =
-      const MethodChannel('scan_preview');
+  static const MethodChannel _channel = const MethodChannel('scan_preview');
 
-  static startCamera() async{
+  static startCamera() async {
     await _channel.invokeMethod('startCamera');
   }
 

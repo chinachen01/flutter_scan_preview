@@ -20,15 +20,16 @@ import com.google.zxing.Result as ZxinResult
 class ScanPreviewController(context: Context,
                             id: Int,
                             binaryMessenger: BinaryMessenger,
-                            val params: Any?) : PlatformView, MethodChannel.MethodCallHandler, BasicMessageChannel.MessageHandler<Any>, ZXingScannerView.ResultHandler{
+                            val params: Any?) : PlatformView, MethodChannel.MethodCallHandler, BasicMessageChannel.MessageHandler<Any>, ZXingScannerView.ResultHandler {
     companion object {
         const val MESSAGE_CHANNEL = "scan_preview_message"
     }
+
     private val scanPreview = object : ZXingScannerView(context) {
         override fun createViewFinderView(context: Context?): IViewFinder {
             val viewFinderView = ViewFinderView(context)
             val args = params as Map<*, *>
-            val laserColor : Long = args["laserColor"] as Long
+            val laserColor: Long = args["laserColor"] as Long
             viewFinderView.setLaserColor(laserColor.toInt())
             viewFinderView.setLaserEnabled(true)
             val borderColor: Long = args["borderColor"] as Long

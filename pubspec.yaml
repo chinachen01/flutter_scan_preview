@@ -1,6 +1,6 @@
 name: scan_preview
-description: A flutter plugin for scan barcode.
-version: 1.0.0
+description: A flutter plugin for scan barcode. This plugin is based on PlatformView.
+version: 1.0.2
 homepage: https://github.com/chinachen01/flutter_scan_preview
 
 environment:
