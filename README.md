@@ -22,15 +22,15 @@ By the way, the framing UI is limited to the native API, and only a part of the 
 
 ## How to use
 ```dart
-class _MyAppState extends State<MyApp> {
+class ScanPreviewPage extends StatefulWidget {
+  @override
+  _ScanPreviewPageState createState() => _ScanPreviewPageState();
+}
+
+class _ScanPreviewPageState extends State<ScanPreviewPage> {
   @override
   void initState() {
     super.initState();
-    _requestPermission();
-  }
-
-  _requestPermission() async {
-    await Permission.camera.request();
   }
 
   @override
@@ -40,12 +40,13 @@ class _MyAppState extends State<MyApp> {
         appBar: AppBar(
           title: const Text('Scan barcode example'),
         ),
-        body: Container(
+        body: SizedBox(
+          width: double.infinity,
+          height: double.infinity,
           child: ScanPreviewWidget(
             onScanResult: (result) {
-              setState(() {
-                debugPrint('scan result: $result');
-              });
+              debugPrint('scan result: $result');
+              Navigator.pop(context, result);
             },
           ),
         ),
@@ -53,6 +54,7 @@ class _MyAppState extends State<MyApp> {
     );
   }
 }
+
 ```
 
 > About Permission : You should request the camear permission by yourself, I use [PermissionHandler]() to request camera permission in this example.
@@ -78,7 +80,7 @@ Use directly.
 
 ## TODO
 
-I am an android developer, there are still many functions of ios that are not implemented.
+I am an android developer, there are still many features of ios that are not implemented.
 
 If you are an ios developer, welcome to contribute your code.
 

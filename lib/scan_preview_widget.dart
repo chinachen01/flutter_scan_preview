@@ -84,7 +84,7 @@ class ScanPreviewWidgetState extends State<ScanPreviewWidget>
   }
 
   Future<void> onPlatformViewCreated(int id) async {
-    await Future.delayed(Duration(milliseconds: 500));
+    await Future.delayed(Duration(milliseconds: 300));
     final ScanPreviewController controller =
         await ScanPreviewController.init(id, this);
     _controller.complete(controller);

@@ -38,7 +38,7 @@ class _MyAppState extends State<MyApp> {
               child: Text('start scan'),
               onPressed: () async {
                 final result = await Navigator.push(this.context,
-                    MaterialPageRoute(builder: (context) => ScanPreview()));
+                    MaterialPageRoute(builder: (context) => ScanPreviewPage()));
                 setState(() {
                   _result = result;
                 });
@@ -52,12 +52,12 @@ class _MyAppState extends State<MyApp> {
   }
 }
 
-class ScanPreview extends StatefulWidget {
+class ScanPreviewPage extends StatefulWidget {
   @override
-  _ScanPreviewState createState() => _ScanPreviewState();
+  _ScanPreviewPageState createState() => _ScanPreviewPageState();
 }
 
-class _ScanPreviewState extends State<ScanPreview> {
+class _ScanPreviewPageState extends State<ScanPreviewPage> {
   @override
   void initState() {
     super.initState();
@@ -68,7 +68,7 @@ class _ScanPreviewState extends State<ScanPreview> {
     return MaterialApp(
       home: Scaffold(
         appBar: AppBar(
-          title: const Text('Scan barcode example11'),
+          title: const Text('Scan barcode example'),
         ),
         body: SizedBox(
           width: double.infinity,

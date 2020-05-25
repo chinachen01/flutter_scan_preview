@@ -57,7 +57,7 @@ class ScanPreviewController(context: Context,
     }
 
     override fun dispose() {
-        scanPreview.stopCamera()
+//        scanPreview.stopCamera()
     }
 
     override fun onMethodCall(call: MethodCall, result: Result) {
