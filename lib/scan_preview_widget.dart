@@ -35,6 +35,8 @@ class ScanPreviewWidgetState extends State<ScanPreviewWidget>
 
   Future<dynamic> _messageHandler(Object message) async {
     widget.onScanResult(message.toString());
+    ScanPreviewController controller = await _controller.future;
+    controller.stopCamera();
   }
 
   @override
@@ -82,6 +84,7 @@ class ScanPreviewWidgetState extends State<ScanPreviewWidget>
   }
 
   Future<void> onPlatformViewCreated(int id) async {
+    await Future.delayed(Duration(milliseconds: 500));
     final ScanPreviewController controller =
         await ScanPreviewController.init(id, this);
     _controller.complete(controller);

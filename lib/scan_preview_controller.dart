@@ -5,7 +5,7 @@ class ScanPreviewController {
   ScanPreviewWidgetState scanState;
   MethodChannel channel;
 
-  ScanPreviewController._(this.channel, this.scanState) {}
+  ScanPreviewController._(this.channel, this.scanState);
 
   static init(int id, ScanPreviewWidgetState state) async {
     assert(id != null);

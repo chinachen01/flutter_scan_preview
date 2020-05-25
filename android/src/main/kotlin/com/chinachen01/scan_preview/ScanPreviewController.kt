@@ -17,15 +17,6 @@ import me.dm7.barcodescanner.core.ViewFinderView
 import me.dm7.barcodescanner.zxing.ZXingScannerView
 import com.google.zxing.Result as ZxinResult
 
-
-/**
- * - author: [chenyong](chinachen6653@gmail.com)
- * - version: 1.0.0
- * - since: 2020/5/7 1:42 PM
- *
- * 内容描述区域
- *
- */
 class ScanPreviewController(context: Context,
                             id: Int,
                             binaryMessenger: BinaryMessenger,

@@ -1,11 +1,11 @@
 import 'package:flutter/material.dart';
-import 'dart:async';
-import 'package:flutter/services.dart';
 import 'package:permission_handler/permission_handler.dart';
-import 'package:scan_preview/scan_preview.dart';
 import 'package:scan_preview/scan_preview_widget.dart';
+import 'package:flutter/foundation.dart';
 
-void main() => runApp(MyApp());
+void main() => runApp(MaterialApp(
+      home: MyApp(),
+    ));
 
 class MyApp extends StatefulWidget {
   @override
@@ -13,6 +13,8 @@ class MyApp extends StatefulWidget {
 }
 
 class _MyAppState extends State<MyApp> {
+  String _result = '';
+
   @override
   void initState() {
     super.initState();
@@ -25,17 +27,56 @@ class _MyAppState extends State<MyApp> {
 
   @override
   Widget build(BuildContext context) {
+    return Scaffold(
+      appBar: AppBar(
+        title: const Text('Scan barcode example'),
+      ),
+      body: Center(
+        child: Column(
+          children: <Widget>[
+            RaisedButton(
+              child: Text('start scan'),
+              onPressed: () async {
+                final result = await Navigator.push(this.context,
+                    MaterialPageRoute(builder: (context) => ScanPreview()));
+                setState(() {
+                  _result = result;
+                });
+              },
+            ),
+            Text('scanl result: $_result')
+          ],
+        ),
+      ),
+    );
+  }
+}
+
+class ScanPreview extends StatefulWidget {
+  @override
+  _ScanPreviewState createState() => _ScanPreviewState();
+}
+
+class _ScanPreviewState extends State<ScanPreview> {
+  @override
+  void initState() {
+    super.initState();
+  }
+
+  @override
+  Widget build(BuildContext context) {
     return MaterialApp(
       home: Scaffold(
         appBar: AppBar(
-          title: const Text('Scan barcode example'),
+          title: const Text('Scan barcode example11'),
         ),
-        body: Container(
+        body: SizedBox(
+          width: double.infinity,
+          height: double.infinity,
           child: ScanPreviewWidget(
             onScanResult: (result) {
-              setState(() {
-                debugPrint('scan result: $result');
-              });
+              debugPrint('scan result: $result');
+              Navigator.pop(context, result);
             },
           ),
         ),

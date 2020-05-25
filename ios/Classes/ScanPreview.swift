@@ -1,9 +1,10 @@
 import Foundation
 import Flutter
 import MTBBarcodeScanner
+import UIKit
 
 class ScanPreview : NSObject,FlutterPlatformView {
-    var uiView: UIView
+    let uiView: UIView
     var scanner: MTBBarcodeScanner
     var methodChannel: FlutterMethodChannel
     var messageChannel: FlutterBasicMessageChannel
@@ -29,10 +30,8 @@ class ScanPreview : NSObject,FlutterPlatformView {
                 } catch {
                      NSLog("Unable to start scanning")
                 }
-                result("start canmera success")
              } else if(call.method == "scan#stopCamera") {
                 tmpScanner.stopScanning()
-                result("stop canmera success")
              }
         })
     }
