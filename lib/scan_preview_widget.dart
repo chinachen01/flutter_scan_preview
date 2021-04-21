@@ -9,7 +9,7 @@ class ScanPreviewWidget extends StatefulWidget {
   ScanPreviewWidget(
       {this.laserColor = 0xFF00FF00,
       this.borderColor = 0xFFFFFFFF,
-      @required this.onScanResult});
+      required this.onScanResult});
 
   final ValueChanged<String> onScanResult;
   final int laserColor;
@@ -29,11 +29,11 @@ class ScanPreviewWidgetState extends State<ScanPreviewWidget>
   @override
   void initState() {
     super.initState();
-    WidgetsBinding.instance.addObserver(this);
+    WidgetsBinding.instance!.addObserver(this);
     _messageChannel.setMessageHandler(_messageHandler);
   }
 
-  Future<dynamic> _messageHandler(Object message) async {
+  Future<dynamic> _messageHandler(dynamic message) async {
     widget.onScanResult(message.toString());
     ScanPreviewController controller = await _controller.future;
     controller.stopCamera();
@@ -41,7 +41,7 @@ class ScanPreviewWidgetState extends State<ScanPreviewWidget>
 
   @override
   void dispose() {
-    WidgetsBinding.instance.removeObserver(this);
+    WidgetsBinding.instance!.removeObserver(this);
     super.dispose();
   }
 
